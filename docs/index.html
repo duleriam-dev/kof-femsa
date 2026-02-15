@@ -6,52 +6,82 @@
     <title>KOF FEMSA</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f4f4f4;
         }
         header {
-            background-color: #1e90ff; /* KOF Brand Color */
+            width: 100%;
+            background-color: #c41e3a;
             color: white;
-            padding: 20px;
+            padding: 1rem 0;
             text-align: center;
         }
-        main {
-            padding: 20px;
+        header img {
+            width: 150px;
+            margin-bottom: 10px;
         }
-        .button {
-            background-color: #ff4500; /* KOF Brand Color */
+        .hero {
+            background: linear-gradient(135deg, #c41e3a, #ff6378);
             color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 5px;
+            padding: 5rem 0;
+            text-align: center;
+            width: 100%;
+        }
+        .cards {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin: 0 1rem;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            width: 200px;
+        }
+        .card:hover {
+            transform: scale(1.05);
         }
         footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #1e90ff; /* KOF Brand Color */
+            margin-top: auto;
+            background-color: #333;
             color: white;
+            width: 100%;
+            text-align: center;
+            padding: 1rem 0;
         }
     </style>
 </head>
 <body>
-
-<header>
-    <h1>Welcome to KOF FEMSA</h1>
-</header>
-
-<main>
-    <p>Explore our latest updates and services.</p>
-    <a href="https://example.com/service1" class="button">Service 1</a>
-    <a href="https://example.com/service2" class="button">Service 2</a>
-    <a href="https://example.com/service3" class="button">Service 3</a>
-</main>
-
-<footer>
-    <p>&copy; 2026 KOF FEMSA. All rights reserved.</p>
-</footer>
-
+    <header>
+        <img src="https://example.com/kof-logo.png" alt="KOF Logo">
+        <h1>KOF Branding</h1>
+    </header>
+    <div class="hero">
+        <h2>Welcome to KOF FEMSA!</h2>
+        <p>Your one-stop solution for all KOF services.</p>
+    </div>
+    <div class="cards">
+        <div class="card">
+            <h3><a href="https://kit.kof.com/pt/inicio" target="_blank">KIT Portal</a></h3>
+        </div>
+        <div class="card">
+            <h3><a href="https://sos.kof.com/ti" target="_blank">SOS Suporte TI</a></h3>
+        </div>
+        <div class="card">
+            <h3><a href="https://kofpr.service-now.com/" target="_blank">ServiceNow ITSM</a></h3>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2026 KOF FEMSA. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
