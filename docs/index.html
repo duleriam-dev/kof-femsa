@@ -3,85 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KOF FEMSA</title>
+    <title>Responsive Index</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: #f4f4f4;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
         }
         header {
-            width: 100%;
-            background-color: #c41e3a;
-            color: white;
-            padding: 1rem 0;
+            background: #35424a;
+            color: #ffffff;
+            padding: 10px 0;
             text-align: center;
         }
-        header img {
-            width: 150px;
-            margin-bottom: 10px;
+        nav {
+            margin: 15px 0;
         }
-        .hero {
-            background: linear-gradient(135deg, #c41e3a, #ff6378);
-            color: white;
-            padding: 5rem 0;
-            text-align: center;
-            width: 100%;
+        nav a {
+            margin: 0 10px;
+            color: #ffffff;
+            text-decoration: none;
         }
-        .cards {
+        .content {
             display: flex;
-            justify-content: center;
-            margin: 2rem 0;
+            flex-direction: column;
         }
-        .card {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            margin: 0 1rem;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease;
-            width: 200px;
+        .responsive-card {
+            background: #ffffff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        .card:hover {
-            transform: scale(1.05);
-        }
-        footer {
-            margin-top: auto;
-            background-color: #333;
-            color: white;
-            width: 100%;
-            text-align: center;
-            padding: 1rem 0;
+        @media (min-width: 600px) {
+            .content {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .responsive-card {
+                flex: 1 1 calc(33% - 20px);
+                margin: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="https://example.com/kof-logo.png" alt="KOF Logo">
-        <h1>KOF Branding</h1>
+        <h1>Responsive Mobile-First Design</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
     </header>
-    <div class="hero">
-        <h2>Welcome to KOF FEMSA!</h2>
-        <p>Your one-stop solution for all KOF services.</p>
-    </div>
-    <div class="cards">
-        <div class="card">
-            <h3><a href="https://kit.kof.com/pt/inicio" target="_blank">KIT Portal</a></h3>
-        </div>
-        <div class="card">
-            <h3><a href="https://sos.kof.com/ti" target="_blank">SOS Suporte TI</a></h3>
-        </div>
-        <div class="card">
-            <h3><a href="https://kofpr.service-now.com/" target="_blank">ServiceNow ITSM</a></h3>
+    <div class="container">
+        <div class="content">
+            <div class="responsive-card">Card 1</div>
+            <div class="responsive-card">Card 2</div>
+            <div class="responsive-card">Card 3</div>
         </div>
     </div>
     <footer>
-        <p>&copy; 2026 KOF FEMSA. All Rights Reserved.</p>
+        <p style="text-align: center; padding: 20px;">&copy; 2026 Responsive Design Example</p>
     </footer>
 </body>
 </html>
