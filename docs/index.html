@@ -1,78 +1,336 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>KOF FEMSA - Portal de Acesso</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
         }
-        .container {
+
+        html, body {
             width: 100%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
+            overflow-x: hidden;
         }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* ============ HEADER ============ */
         header {
-            background: #35424a;
-            color: #ffffff;
-            padding: 10px 0;
+            background: linear-gradient(135deg, #c41e3a 0%, #8b1428 100%);
+            color: white;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #c41e3a;
+            font-size: 20px;
+        }
+
+        header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .header-subtitle {
+            font-size: 12px;
+            opacity: 0.9;
+            margin-top: 0.25rem;
+        }
+
+        /* ============ HERO SECTION ============ */
+        .hero {
+            background: linear-gradient(135deg, #c41e3a 0%, #8b1428 100%);
+            color: white;
+            padding: 2.5rem 1.5rem;
             text-align: center;
         }
-        nav {
-            margin: 15px 0;
+
+        .hero h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.5px;
         }
-        nav a {
-            margin: 0 10px;
-            color: #ffffff;
-            text-decoration: none;
+
+        .hero p {
+            font-size: 15px;
+            opacity: 0.95;
+            margin-bottom: 0.5rem;
         }
-        .content {
+
+        .hero-subtitle {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        /* ============ STATUS BADGE ============ */
+        .status-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* ============ MAIN CONTENT ============ */
+        main {
+            padding: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ============ CARDS CONTAINER ============ */
+        .cards-container {
             display: flex;
             flex-direction: column;
+            gap: 1rem;
         }
-        .responsive-card {
-            background: #ffffff;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+        /* ============ CARD STYLES ============ */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border: 2px solid #e8ecf1;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            color: inherit;
         }
-        @media (min-width: 600px) {
-            .content {
-                flex-direction: row;
-                flex-wrap: wrap;
+
+        .card:active {
+            background: #f9f9f9;
+            border-color: #c41e3a;
+            box-shadow: 0 4px 12px rgba(196, 30, 58, 0.15);
+            transform: scale(0.98);
+        }
+
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.75rem;
+            text-align: center;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 1rem;
+            text-align: center;
+            flex-grow: 1;
+            line-height: 1.5;
+        }
+
+        .card-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #c41e3a 0%, #8b1428 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(196, 30, 58, 0.2);
+        }
+
+        .card-button:active {
+            box-shadow: 0 2px 6px rgba(196, 30, 58, 0.3);
+            transform: scale(0.95);
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: white;
+            border-top: 1px solid #e8ecf1;
+            padding: 1.5rem;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            margin-top: 2rem;
+        }
+
+        .footer-content p {
+            margin: 0.25rem 0;
+        }
+
+        .footer-content p:first-child {
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* ============ TABLET (768px+) ============ */
+        @media (min-width: 768px) {
+            .cards-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
             }
-            .responsive-card {
-                flex: 1 1 calc(33% - 20px);
-                margin: 10px;
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            main {
+                padding: 2rem;
+            }
+        }
+
+        /* ============ DESKTOP (1024px+) ============ */
+        @media (min-width: 1024px) {
+            main {
+                max-width: 1000px;
+                padding: 3rem;
+            }
+
+            .cards-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .card {
+                padding: 2rem;
+            }
+        }
+
+        /* ============ HOVER (Desktop) ============ */
+        @media (hover: hover) {
+            .card:hover {
+                border-color: #c41e3a;
+                box-shadow: 0 8px 20px rgba(196, 30, 58, 0.15);
+                transform: translateY(-4px);
+            }
+
+            .card-button:hover {
+                box-shadow: 0 6px 16px rgba(196, 30, 58, 0.3);
+            }
+        }
+
+        /* ============ SMALL DEVICES (320px) ============ */
+        @media (max-width: 360px) {
+            header h1 {
+                font-size: 20px;
+            }
+
+            .hero h2 {
+                font-size: 24px;
+            }
+
+            .card {
+                padding: 1.25rem;
+            }
+
+            .card h2 {
+                font-size: 16px;
+            }
+
+            main {
+                padding: 1rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- HEADER -->
     <header>
-        <h1>Responsive Mobile-First Design</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
-    <div class="container">
-        <div class="content">
-            <div class="responsive-card">Card 1</div>
-            <div class="responsive-card">Card 2</div>
-            <div class="responsive-card">Card 3</div>
+        <div class="header-logo">
+            <div class="header-logo-icon">K</div>
         </div>
+        <h1>KOF FEMSA</h1>
+        <div class="header-subtitle">Portal de Acesso</div>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero">
+        <div class="status-badge">✓ Todos os serviços online</div>
+        <h2>Bem-vindo!</h2>
+        <p>Acesso rápido aos principais serviços</p>
+        <div class="hero-subtitle">Toque em qualquer link para acessar</div>
     </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <div class="cards-container">
+            <!-- CARD 1: KIT -->
+            <a href="https://kit.kof.com/pt/inicio" target="_blank" class="card">
+                <div class="card-icon">📚</div>
+                <h2>KIT Portal</h2>
+                <p>Portal principal com informações e recursos corporativos</p>
+                <button class="card-button">Acessar</button>
+            </a>
+
+            <!-- CARD 2: SOS TI -->
+            <a href="https://sos.kof.com/ti" target="_blank" class="card">
+                <div class="card-icon">🆘</div>
+                <h2>SOS - Suporte</h2>
+                <p>Abra tickets de suporte técnico e acompanhe solicitações</p>
+                <button class="card-button">Abrir Ticket</button>
+            </a>
+
+            <!-- CARD 3: SERVICE NOW -->
+            <a href="https://kofpr.service-now.com/" target="_blank" class="card">
+                <div class="card-icon">🔧</div>
+                <h2>Service Now</h2>
+                <p>Gerencie incidentes, mudanças e requisições de TI</p>
+                <button class="card-button">Acessar ITSM</button>
+            </a>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
     <footer>
-        <p style="text-align: center; padding: 20px;">&copy; 2026 Responsive Design Example</p>
+        <div class="footer-content">
+            <p>KOF FEMSA - Portal de Acesso</p>
+            <p>© 2026 Todos os direitos reservados</p>
+            <p>Coca-Cola FEMSA Brasil</p>
+        </div>
     </footer>
 </body>
 </html>
